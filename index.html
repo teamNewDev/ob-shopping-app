@@ -7,7 +7,50 @@
         <link rel="stylesheet" href="./shopping-app-images/assets/icon-192.png">
         <link rel="stylesheet" href="./index.css">
     </head>
+
     <body>
+        <nav>
+            <p>My List</p>
+        </nav>
+        <div class="container">
+            <form id="itemForm">
+                <label>
+                    Name of item:
+                    <input type="text" id="nameInput" required>
+                </label>
+
+                <label>
+                    Quantity:
+                    <input type="number" id="quantityInput" value="1">
+                </label>
+
+                <label>
+                    Price:
+                    <input type="text" id="priceInput" value="0">
+                </label>
+
+                <button type="submit" id="addItemButton">
+                    Add item
+                </button>
+            </form>
+        </div>
+
+        <div id="itemsDiv">
+            <div class="item">
+                <label>
+                    <input type="checkbox" class="checkbox" checked>
+                </label>
+                <div class="itemInfo">
+                    <p>Fruit Juice</p>
+                    <p>$5 * 3</p>
+                </div>
+
+                <button class="deleteButton">X</button>
+
+                <div id="totalPriceDiv">Total price</div>
+            </div>
+        </div>
+
         <script src="./index.js"></script>
     </body>
 </html>
