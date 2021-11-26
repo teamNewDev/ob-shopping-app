@@ -6,19 +6,19 @@ Shopping App is my solution to the Webdev Challenge. Prior to the challenge, I h
 ## Features 
 
 The app is a Progresive web application, is responsive and is accessible as it is built with the Web Content Assessibility Guidelines (WCAG).
-Users are able to:
--Add items to their shopping list
--Mark an item as purchased
--Undo marking an item as purchased
--Update an item name, price or quantity
--Delete an item
--Clear all items at once
+Users are able to:  
+-Add items to their shopping list  
+-Mark an item as purchased  
+-Undo marking an item as purchased  
+-Update an item name, price or quantity  
+-Delete an item  
+-Clear all items at once  
 
 ## Stack
 
-For this project, I used the following:
-1.HTML
-2.CSS
-3.JavaScript
-4.IndexedDb/Dexie for storage
-5.Workbox for service worker generation
+For this project, I used the following:  
+1.HTML  
+2.CSS  
+3.JavaScript  
+4.IndexedDb/Dexie for storage  
+5.Workbox for service worker generation  
