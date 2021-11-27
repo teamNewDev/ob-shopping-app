@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Shopping App</title>
-        <link rel="stylesheet" href="./shopping-app-images/assets/icon-192.png">
+        <link rel="icon" href="./shopping-app-images/assets/icon-192.png">
         <link rel="stylesheet" href="./index.css">
         <script src="./dexie.min.js"></script>
     </head>
@@ -36,34 +36,8 @@
             </form>
         </div>
 
-        <div id="itemsDiv">
-            <div class="item">
-                <label>
-                    <input type="checkbox" class="checkbox" checked>
-                </label>
-                <div class="itemInfo">
-                    <p>Fruit Juice</p>
-                    <p>$5 * 3</p>
-                </div>
-
-                <button class="deleteButton">X</button>
-
-                <div id="totalPriceDiv">Total price</div>
-            </div>
-            <div class="item purchased">
-                <label>
-                    <input type="checkbox" class="checkbox" checked>
-                </label>
-                <div class="itemInfo">
-                    <p>Fruit Juice</p>
-                    <p>$5 * 3</p>
-                </div>
-
-                <button class="deleteButton">X</button>
-
-                <div id="totalPriceDiv">Total price</div>
-            </div>
-        </div>
+        <div id="itemsDiv"></div>
+        <div id="totalPriceDiv"></div>
 
         <script src="./index.js"></script>
     </body>
