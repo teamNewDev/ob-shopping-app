@@ -28,6 +28,7 @@ const populateItemsDiv = async () => {
                 <input 
                 type="checkbox" 
                 class="checkbox" 
+                onchange="toggleItemStatus(event, ${item.id})"
                 ${item.isPurchased && 'checked'}>
             </label>
 
@@ -36,15 +37,19 @@ const populateItemsDiv = async () => {
                 <p>$${item.price} x ${item.quantity}</p>
             </div>
 
-            <button class="deleteButton">X</button>
+            <button class="deleteButton" onclick = "removeItem(${item.id})">
+                X
+            </button>
         </div>
-    `)
+    `).join('');
 
     const arrayOfPrices = allItems.map(item => item.price * item.quantity);
     const totalPrice = arrayOfPrices.reduce((a, b) => a + b, 0);
     
     totalPriceDiv.innerText = 'Total price: $'+ totalPrice;
 }
+
+window.onload = populateItemsDiv
 
 itemForm.onsubmit = async (event) => {
     event.preventDefault();
@@ -54,6 +59,17 @@ itemForm.onsubmit = async (event) => {
     const price = document.getElementById('priceInput').value;
 
     await db.items.add({ name, quantity, price });
+    await populateItemsDiv();
 
     itemForm.reset();
 };
+
+const toggleItemStatus = async (event, id) => {
+    await db.items.update(id, { isPurchased: !!event.target.checked })
+    await populateItemsDiv()
+}
+
+const removeItem = async (id) => {
+    await db.items.delete(id);
+    await populateItemsDiv();
+}

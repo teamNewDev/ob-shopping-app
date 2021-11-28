@@ -1,23 +1,63 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     background: #f2f2f2;
+    font-family: "ubuntu", sans-serif;
+    width: 100%;
+}
+
+.intro{
+    font-weight:500;
+    font-size: 32px;
+    line-height: 36.77px;
+    margin:0.5em 0 0.8em 0;
 }
 
 nav{
-    background: #00805a;
-    height: 3rem;
-    line-height: 3rem;
-    color: white;
-    padding-left: 2rem;
-    margin-bottom: 1rem;
+    /*background: #00805a;*/
+    height: 6rem;
+    line-height: 6rem;
+    padding: 0 2rem;
+    border-radius: 0.1em;
+    /*position: fixed;
+    top: 0;*/
 }
 
-.container{
-    padding: 1rem;
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+
+nav ul li a:hover{
+    background-color: blanchedalmond;
+    padding: 1em 4em;
+    border-radius: 1.5em;
+}
+
+nav ul li #profile{
+    height:3rem;
+    width:3rem;
+    background-color: blanchedalmond;
+}
+
+main{
+    padding: 0 2rem;
+    margin-top: 1rem;
 }
 
 #itemForm label{
