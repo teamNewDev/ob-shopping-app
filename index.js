@@ -38,7 +38,7 @@ const populateItemsDiv = async () => {
             </div>
 
             <button class="deleteButton" onclick = "removeItem(${item.id})">
-                X
+                <img src="./shopping-app-images/assets/delete_black_24dp.svg">
             </button>
         </div>
     `).join('');

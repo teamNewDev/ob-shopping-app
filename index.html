@@ -4,11 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shopping App</title>
-    <link rel="icon" href="./shopping-app-images/assets/icon-192.png">
+    <title>Oja</title>
+    <link rel="icon" href="./shopping-app-images/assets/undraw_shopping_app_flsj.svg">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
     <script src="./dexie.min.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -16,49 +24,94 @@
         <nav>
             <ul>
                 <li><img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg"></li>
-                <li><a href="#itemsDiv"><img src="./shopping-app-images/assets/shopping_cart_black_24dp.svg"></a></li>
-                <!--<li><span id="profile">hello</span></li>-->
+                <li class="logo">Oja</li>
+                <li>
+                    <img src="./shopping-app-images/assets/2020-07-26.jpg" alt="user profile" height="50px" class="profile">
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="container">
-            <div>
-                <p class="intro">Shopping has never been easier.</p>
-                <p>Not only is Oja a shopping list app, it doubles as a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="homeContainer">
+                <div class="introDiv">
+                    <h1 class="intro">Shopping has never been easier.</h1>
+                    <p>
+                        Not only is Oja a shopping list app, it doubles as a lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                <div class="homeImage">
+
+                </div>
             </div>
-            <div class="slide-container">
-                <div class="slide-item"></div>
-                <div class="slide-item"></div>
-                <div class="slide-item"></div>
-                <div class="slide-item"></div>
-                <div class="slide-item"></div>
+            <div class="categories">
+                <h2>Categories</h2>
+                <div class="productFlexbox">
+                    <div class="product">
+                        <div>
+                            <img class="productImage"
+                                src="./shopping-app-images/assets/pexels-alleksana-4271568.jpg" alt=""
+                                height="120px" width="120px">
+                        </div>
+                        <div>Casuals</div>
+                    </div>
+                    <div class="product">
+                        <div>
+                            <img class="productImage"
+                                src="./shopping-app-images/assets/pexels-becerra-govea-photo-5774154.jpg" alt=""
+                                height="120px" width="120px">
+                        </div>
+                        <div>Beef</div>
+                    </div>
+                    <div class="product">
+                        <div>
+                            <img class="productImage"
+                                src="./shopping-app-images/assets/pexels-karolina-grabowska-4202482.jpg" alt=""
+                                height="120px" width="120px">
+                        </div>
+                        <div>Cleaning</div>
+                    </div>
+                    <div class="product">
+                        <div>
+                            <img class="productImage"
+                                src="./shopping-app-images/assets/pexels-karolina-grabowska-4964546.jpg" alt=""
+                                height="120px" width="120px">
+                        </div>
+                        <div>Cereal</div>
+                    </div>
+                </div>
             </div>
-            <form id="itemForm">
-                <label>
-                    Name of item:
-                    <input type="text" id="nameInput" required>
-                </label>
 
-                <label>
-                    Quantity:
-                    <input type="number" id="quantityInput" value="1">
-                </label>
+            <div class="itemsContainer">
+                <form id="itemForm">
+                    <h2>Shopping List</h2>
+                    <label>
+                        Name of item:
+                        <input type="text" id="nameInput" required>
+                    </label>
 
-                <label>
-                    Price:
-                    <input type="text" id="priceInput" value="0">
-                </label>
+                    <label>
+                        Quantity:
+                        <input type="number" id="quantityInput" value="1">
+                    </label>
 
-                <button type="submit" id="addItemButton">
-                    Add item
-                </button>
-            </form>
+                    <label>
+                        Price:
+                        <input type="text" id="priceInput" value="0">
+                    </label>
+
+                    <button type="submit" id="addItemButton">
+                        Add item
+                    </button>
+                </form>
+                <div id="itemsDiv"></div>
+                <div id="totalPriceDiv"></div>
+            </div>
         </div>
-
-        <div id="itemsDiv"></div>
-        <div id="totalPriceDiv"></div>
     </main>
 
     <footer></footer>
