@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oja</title>
     <link rel="icon" href="./shopping-app-images/assets/undraw_shopping_app_flsj.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
     <link rel="manifest" href="./manifest.json">
 
@@ -72,10 +70,10 @@
                     <div class="product">
                         <div>
                             <img class="productImage"
-                                src="./shopping-app-images/assets/pexels-karolina-grabowska-4202482.jpg" alt=""
+                                src="./shopping-app-images/assets/pexels-trang-doan-4838747.jpg" alt=""
                                 height="120px" width="120px">
                         </div>
-                        <div>Cleaning</div>
+                        <div>Fruits</div>
                     </div>
                     <div class="product">
                         <div>
@@ -90,33 +88,37 @@
 
             <div class="itemsContainer">
                 <form id="itemForm">
-                    <h2>Shopping List</h2>
-                    <label>
-                        Name of item:
-                        <input type="text" id="nameInput" required>
-                    </label>
+                    <h2 class="formTitle">My Shopping List</h2>
+                    <fieldset>
+                        <input type="text" id="nameInput" placeholder="Name of item" required>
 
-                    <label>
-                        Quantity:
-                        <input type="number" id="quantityInput" value="1">
-                    </label>
-
-                    <label>
-                        Price:
-                        <input type="text" id="priceInput" value="0">
-                    </label>
+                        <input type="number" id="quantityInput" placeholder="Quantity needed">
+                    
+                        <input type="text" id="priceInput" placeholder="Price of item">
+                    </fieldset>
 
                     <button type="submit" id="addItemButton">
                         Add item
                     </button>
+                    <button type="reset" id="deleteButton" onclick="clearItems()">
+                        Clear items
+                    </button>
                 </form>
-                <div id="itemsDiv"></div>
-                <div id="totalPriceDiv"></div>
+                <div id="itemsDiv" class = "itemsDiv"></div>
+                <div><b id="totalPriceDiv"></b></div>
             </div>
         </div>
     </main>
 
-    <footer></footer>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg" alt="logo"> &copy; 2021 Oja, Inc.
+                </li>
+            </ul>
+        </nav>
+    </footer>
 
     <script src="./index.js"></script>
 </body>

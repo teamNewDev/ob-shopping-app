@@ -7,20 +7,6 @@ const totalPriceDiv = document.getElementById('totalPriceDiv');
 
 const populateItemsDiv = async () => {
     const allItems = await db.items.reverse().toArray()
-    /*[
-        {
-            name: 'hello',
-            quantity: 4,
-            price: 10,
-            isPurchased: true
-        },
-        {
-            name: 'Milk',
-            quantity: 1,
-            price: 10,
-            isPurchased: false
-        }
-    ]*/
 
     itemsDiv.innerHTML = allItems.map( item => `
         <div class="item ${item.isPurchased && 'purchased'}">
@@ -33,9 +19,14 @@ const populateItemsDiv = async () => {
             </label>
 
             <div class="itemInfo">
-                <p>${item.name}</p>
-                <p>$${item.price} x ${item.quantity}</p>
+                <p id = "itemName" contentEditable = "true">
+                    <b>${item.name} $${item.price} x ${item.quantity}</b>
+                </p>
             </div>
+
+            <button id="editButton" onclick = "editItem()">
+                <img src="./shopping-app-images/assets/edit_black_24dp.svg">
+            </button>
 
             <button class="deleteButton" onclick = "removeItem(${item.id})">
                 <img src="./shopping-app-images/assets/delete_black_24dp.svg">
@@ -72,4 +63,17 @@ const toggleItemStatus = async (event, id) => {
 const removeItem = async (id) => {
     await db.items.delete(id);
     await populateItemsDiv();
+}
+
+function clearItems(){
+    items = document.getElementsByClassName('itemsDiv'); //let
+    for(item of items){
+        item.innerHTML = '';
+        db.items.clear();
+        populateItemsDiv();
+    }
+}
+
+function editItem(){
+    document.getElementById('itemName').contentEditable = "true";
 }
