@@ -19,12 +19,15 @@ const populateItemsDiv = async () => {
             </label>
 
             <div class="itemInfo">
-                <p id = "itemName" contentEditable = "true">
-                    <b>${item.name} $${item.price} x ${item.quantity}</b>
+                <p id = "itemName">
+                    ${item.name}
+                </p>
+                <p>
+                    $${item.price} x ${item.quantity}
                 </p>
             </div>
 
-            <button id="editButton" onclick = "editItem()">
+            <button id="editButton" onclick = "editItem(${item.id})">
                 <img src="./shopping-app-images/assets/edit_black_24dp.svg">
             </button>
 
@@ -65,15 +68,47 @@ const removeItem = async (id) => {
     await populateItemsDiv();
 }
 
-function clearItems(){
-    items = document.getElementsByClassName('itemsDiv'); //let
-    for(item of items){
-        item.innerHTML = '';
-        db.items.clear();
-        populateItemsDiv();
-    }
+
+
+
+
+
+
+
+
+const clearItems = () => {
+    let items = document.getElementsByClassName('itemsDiv');
+
+    items.innerHTML = '';
+    db.items.clear();
+    populateItemsDiv();
 }
 
-function editItem(){
-    document.getElementById('itemName').contentEditable = "true";
+const editItem = () => {
+   let itemName = document.getElementById('itemName');
+
+    itemName.setAttribute('contentEditable', 'true');
+    itemName.focus();
+}
+
+
+/*const editItem = (id) => {
+    let item_name = document.getElementById('nameInput').value;
+    let item_quantity = document.getElementById('quantityInput').value;
+    let item_price = document.getElementById('priceInput').value;
+    
+ 
+    item_name = items.name;
+    item_quantity = items.quantity;
+    item_price = items.price;
+    item_name.focus();
+ }*/
+
+ const updateItems = async (id) => {
+     let updateButton = getElementById('updateItemButton')
+
+     await updateButton.addEventListener("click", function(){
+        db.items.update(id);
+        populateItemsDiv();
+     })
 }

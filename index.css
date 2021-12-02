@@ -7,7 +7,7 @@
 body{
     font-family: 'Outfit', sans-serif;
     width: 100%;
-    background: url(./shopping-app-images/assets/Animated\ Shape.svg);
+    /*background: url(./shopping-app-images/assets/Animated\ Shape.svg);*/
 }
 
 .intro{
@@ -18,8 +18,8 @@ body{
 
 nav{
     background: white;
-    height: 5rem;
-    line-height: 5rem;
+    height: 6rem;
+    line-height: 6rem;
     padding: 0 2rem;
     border-radius: 0.1em;
     box-shadow: 3px 3px 8px -6px  #f7e6d4;
@@ -41,16 +41,11 @@ nav ul li a{
     color: #000000;
 }
 
-nav ul li a:hover{
-    background-color: blanchedalmond;
-    padding: 1em 4em;
-    border-radius: 1.5em;
-}
-
-.logo{
+.name{
     font-family: 'Comforter Brush', cursive;
-    font-size: 2em;
-    line-height: 30px;
+    font-size: 2.5em;
+    /*line-height: 30px;*/
+    align-self: center;
 }
 
 .profile{
@@ -58,9 +53,15 @@ nav ul li a:hover{
     box-shadow: 3px 3px 8px -4px #f7e6d4;
 }
 
+.logo, .profile{
+    align-self: center;
+    margin-top: 0.7em;
+}
+
 main{
     padding: 0 1.5rem;
-    margin-top: 1rem;
+    margin-top: 0;
+    background: url(./shopping-app-images/assets/Animated\ Shape.svg);
 }
 
 h2{
@@ -99,17 +100,13 @@ h2{
 }
 
 .formTitle{
-    margin-bottom: 1em;
+    margin-bottom: 0.3em;
 }
 
 #itemForm label{
     display: block;
     margin-bottom: 1rem;
 }
-
-/*#shoppingList{
-    background-color: #ffbf86;
-}*/
 
 #itemForm input{
     height: 2.3rem;
@@ -119,14 +116,18 @@ h2{
     display: block;
     border: none;
     font-size: 1em;
-    width: 90%;
+    width: 80%;
 }
 
 #itemForm fieldset{
     border: none;
 }
 
-#addItemButton, #deleteButton{
+#itemForm{
+    margin-bottom: 3rem;
+}
+
+#addItemButton, #updateItemButton, #clearItemsButton{
     border:none;
     background:#54cddd;
     font-size: 1em;
@@ -136,15 +137,20 @@ h2{
     margin-right: 1em;
 }
 
-#addItemButton:hover, #deleteButton:hover {
+#clearItemsButton{
+    margin-top: 1em;
+}
+
+#addItemButton:hover, #clearItemsButton:hover, #updateItemButton:hover {
     background-color: #9ee9f3af;
 }
 
 #itemsDiv{
-    margin: 3rem auto;
-    width: 90%;
+    margin: 5rem auto;
+    width: 80%;
     height: 2.3rem;
     font-size: 1.05em;
+    display: unset;
 }
 
 .item{
@@ -161,9 +167,9 @@ h2{
     float: left;
 }
 
-/*.itemInfo{
-    text-align: center;
-}*/
+.item .itemInfo #itemName:active{
+    border: none;
+}
 
 .deleteButton, #editButton{
     margin: 0 0 0 auto;
@@ -178,12 +184,31 @@ h2{
     margin-top: 3px;
 }
 
+.deleteButton:hover, #editButton:hover{
+    background-color: #bfbfbf;
+}
+
 .purchased{
     background: #bfbfbfe1;
 }
 
 .purchased p{
     text-decoration: line-through;
+}
+
+
+footer{
+    background: white;
+    height: 6rem;
+    line-height: 6rem;
+    padding: 0 2rem;
+    border-radius: 0.1em;
+    box-shadow: 3px 3px 8px -6px  #f7e6d4;
+    text-align: center;
+}
+
+footer ol li{
+    list-style-type: none;
 }
 
 
@@ -207,14 +232,22 @@ h2{
         background-size: contain;
         background-repeat: no-repeat;
         width: 2000px;
-        margin-top: 1em;
+        margin: 5em 5em 0 1em;
+
     }
 
     .introDiv{
-        margin:9em 2em 0 1em;
+        margin:11em 0 0 4em;
+        text-align: justify;
+        padding-right: 7em;
+    }
+
+    .itemsContainer{
+        width: 90%;
     }
 
 
+    
 
 }
 @media screen and (min-width: 1200px){

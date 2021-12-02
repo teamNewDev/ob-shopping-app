@@ -23,8 +23,8 @@
     <header>
         <nav>
             <ul>
-                <li><img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg"></li>
-                <li class="logo">Oja</li>
+                <li><img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg" class="logo"></li>
+                <li class="name">Oja</li>
                 <li>
                     <img src="./shopping-app-images/assets/2020-07-26.jpg" alt="user profile" height="50px" class="profile">
                 </li>
@@ -100,24 +100,35 @@
                     <button type="submit" id="addItemButton">
                         Add item
                     </button>
-                    <button type="reset" id="deleteButton" onclick="clearItems()">
-                        Clear items
+                    <button id="updateItemButton">
+                        Update item
                     </button>
                 </form>
-                <div id="itemsDiv" class = "itemsDiv"></div>
-                <div><b id="totalPriceDiv"></b></div>
+                <div id="itemsDiv" class = "itemsDiv">
+                    
+                </div>
+                
+                <div>
+                    <b id="totalPriceDiv"></b>
+                </div>
+
+                <div>
+                    <button id="clearItemsButton" onclick = "clearItems()">
+                        Clear items
+                    </button>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <nav>
-            <ul>
+        <div>
+            <ol>
                 <li>
                     <img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg" alt="logo"> &copy; 2021 Oja, Inc.
                 </li>
-            </ul>
-        </nav>
+            </ol>
+        </div>
     </footer>
 
     <script src="./index.js"></script>
