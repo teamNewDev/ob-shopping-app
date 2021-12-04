@@ -24,9 +24,10 @@
         <nav>
             <ul>
                 <li><img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg" class="logo"></li>
-                <li class="name">Oja</li>
+                <li class="appName">Oja</li>
                 <li>
-                    <img src="./shopping-app-images/assets/2020-07-26.jpg" alt="user profile" height="50px" class="profile">
+                    <img src="./shopping-app-images/assets/2020-07-26.jpg" alt="user profile" height="50px"
+                        class="profile">
                 </li>
             </ul>
         </nav>
@@ -39,50 +40,31 @@
                     <h1 class="intro">Shopping has never been easier.</h1>
                     <p>
                         Not only is Oja a shopping list app, it doubles as a lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
+                </div>
+                <div class="slideContainer">
+                    <div class="slides fade">
+                        <div>
+                            <img class="slideImage" src="./shopping-app-images/assets/basket.jpg" alt="vegetables"
+                                style="width: 100%;">
+                        </div>
+                    </div>
+                    <div class="slides fade">
+                        <div>
+                            <img class="slideImage" src="./shopping-app-images/assets/pexels-trang-doan-4838747.jpg"
+                                alt="Fruits" style="width: 100%;">
+                        </div>
+                    </div>
+                    <div class="slides fade">
+                        <div>
+                            <img class="slideImage" src="./shopping-app-images/assets/happy-shopper.jpg"
+                                alt="a happy shopper" style="width: 100%;">
+                        </div>
+                    </div>
                 </div>
                 <div class="homeImage">
 
-                </div>
-            </div>
-            <div class="categories">
-                <h2>Categories</h2>
-                <div class="productFlexbox">
-                    <div class="product">
-                        <div>
-                            <img class="productImage"
-                                src="./shopping-app-images/assets/pexels-alleksana-4271568.jpg" alt=""
-                                height="120px" width="120px">
-                        </div>
-                        <div>Casuals</div>
-                    </div>
-                    <div class="product">
-                        <div>
-                            <img class="productImage"
-                                src="./shopping-app-images/assets/pexels-becerra-govea-photo-5774154.jpg" alt=""
-                                height="120px" width="120px">
-                        </div>
-                        <div>Beef</div>
-                    </div>
-                    <div class="product">
-                        <div>
-                            <img class="productImage"
-                                src="./shopping-app-images/assets/pexels-trang-doan-4838747.jpg" alt=""
-                                height="120px" width="120px">
-                        </div>
-                        <div>Fruits</div>
-                    </div>
-                    <div class="product">
-                        <div>
-                            <img class="productImage"
-                                src="./shopping-app-images/assets/pexels-karolina-grabowska-4964546.jpg" alt=""
-                                height="120px" width="120px">
-                        </div>
-                        <div>Cereal</div>
-                    </div>
                 </div>
             </div>
 
@@ -93,7 +75,7 @@
                         <input type="text" id="nameInput" placeholder="Name of item" required>
 
                         <input type="number" id="quantityInput" placeholder="Quantity needed">
-                    
+
                         <input type="text" id="priceInput" placeholder="Price of item">
                     </fieldset>
 
@@ -104,17 +86,17 @@
                         Update item
                     </button>
                 </form>
-                <div id="itemsDiv" class = "itemsDiv">
-                    
+                <div id="itemsDiv" class="itemsDiv">
+
                 </div>
-                
+
                 <div>
                     <b id="totalPriceDiv"></b>
                 </div>
 
                 <div>
-                    <button id="clearItemsButton" onclick = "clearItems()">
-                        Clear items
+                    <button id="clearItemsButton" onclick="clearAllItems()">
+                        Clear all items
                     </button>
                 </div>
             </div>
@@ -125,7 +107,8 @@
         <div>
             <ol>
                 <li>
-                    <img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg" alt="logo"> &copy; 2021 Oja, Inc.
+                    <img src="./shopping-app-images/assets/undraw_shopping_app_flsj.svg" alt="logo"> &copy; 2021 Oja,
+                    Inc.
                 </li>
             </ol>
         </div>
@@ -133,5 +116,4 @@
 
     <script src="./index.js"></script>
 </body>
-
 </html>

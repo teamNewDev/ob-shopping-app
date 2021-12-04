@@ -1,5 +1,5 @@
 const db = new Dexie('ShoppingApp');
-db.version(1).stores( { items: '++id,name,price,isPurchased'} );
+db.version(1).stores({ items: '++id,name,price,isPurchased' });
 
 const itemForm = document.getElementById('itemForm');
 const itemsDiv = document.getElementById('itemsDiv');
@@ -8,7 +8,7 @@ const totalPriceDiv = document.getElementById('totalPriceDiv');
 const populateItemsDiv = async () => {
     const allItems = await db.items.reverse().toArray()
 
-    itemsDiv.innerHTML = allItems.map( item => `
+    itemsDiv.innerHTML = allItems.map(item => `
         <div class="item ${item.isPurchased && 'purchased'}">
             <label>
                 <input 
@@ -19,15 +19,15 @@ const populateItemsDiv = async () => {
             </label>
 
             <div class="itemInfo">
-                <p id = "itemName">
+                <p class= "itemName">
                     ${item.name}
                 </p>
                 <p>
-                    $${item.price} x ${item.quantity}
+                    <span class= "itemPrice"> $${item.price} </span> <span class="itemQuantity"> x ${item.quantity}</span> 
                 </p>
             </div>
 
-            <button id="editButton" onclick = "editItem(${item.id})">
+            <button class="editButton" onclick="editItem(${item.id})">
                 <img src="./shopping-app-images/assets/edit_black_24dp.svg">
             </button>
 
@@ -39,8 +39,8 @@ const populateItemsDiv = async () => {
 
     const arrayOfPrices = allItems.map(item => item.price * item.quantity);
     const totalPrice = arrayOfPrices.reduce((a, b) => a + b, 0);
-    
-    totalPriceDiv.innerText = 'Total price: $'+ totalPrice;
+
+    totalPriceDiv.innerText = 'Total price: $' + totalPrice;
 }
 
 window.onload = populateItemsDiv
@@ -48,9 +48,9 @@ window.onload = populateItemsDiv
 itemForm.onsubmit = async (event) => {
     event.preventDefault();
 
-    const name = document.getElementById('nameInput').value;
-    const quantity = document.getElementById('quantityInput').value;
-    const price = document.getElementById('priceInput').value;
+    let name = document.getElementById('nameInput').value;
+    let quantity = document.getElementById('quantityInput').value;
+    let price = document.getElementById('priceInput').value;
 
     await db.items.add({ name, quantity, price });
     await populateItemsDiv();
@@ -63,20 +63,14 @@ const toggleItemStatus = async (event, id) => {
     await populateItemsDiv()
 }
 
+//Delete an item
 const removeItem = async (id) => {
     await db.items.delete(id);
     await populateItemsDiv();
 }
 
-
-
-
-
-
-
-
-
-const clearItems = () => {
+//Delete all items button
+const clearAllItems = () => {
     let items = document.getElementsByClassName('itemsDiv');
 
     items.innerHTML = '';
@@ -84,31 +78,49 @@ const clearItems = () => {
     populateItemsDiv();
 }
 
-const editItem = () => {
-   let itemName = document.getElementById('itemName');
+//Update item button
+const updateItems = (id, name, quantity, price) => {
+    let updateButton = getElementById('updateItemButton')
 
-    itemName.setAttribute('contentEditable', 'true');
-    itemName.focus();
+    updateButton.addEventListener("click", function () {
+        db.items.modify(id, {
+            name: document.getElementById('nameInput').value,
+            quantity: document.getElementById('quantityInput').value,
+            price: document.getElementById('priceInput').value
+        });
+    })
+    populateItemsDiv();
+}
+
+//Edit item button
+editItem = async (id) => {
+    db.open().then(async db => {
+        return await db.items.where('id').equals(id).toArray();
+    }).then(item =>{
+        document.getElementById('nameInput').value = item[0].name;
+        document.getElementById('quantityInput').value = parseInt(item[0].quantity);
+        document.getElementById('priceInput').value = parseInt(item[0].price);
+    });
 }
 
 
-/*const editItem = (id) => {
-    let item_name = document.getElementById('nameInput').value;
-    let item_quantity = document.getElementById('quantityInput').value;
-    let item_price = document.getElementById('priceInput').value;
-    
- 
-    item_name = items.name;
-    item_quantity = items.quantity;
-    item_price = items.price;
-    item_name.focus();
- }*/
+//Animation
+let slideIndex = 0;
+showSlides();
 
- const updateItems = async (id) => {
-     let updateButton = getElementById('updateItemButton')
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slides");
 
-     await updateButton.addEventListener("click", function(){
-        db.items.update(id);
-        populateItemsDiv();
-     })
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000);
 }
