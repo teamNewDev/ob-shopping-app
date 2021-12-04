@@ -27,6 +27,6 @@ For this project, I used the following:
 
 The app is was built to be responsive. Its homepage's view on mobile and desktop is seen below:  
 
-![desktop view] (https://github.com/teamNewDev/ob-shopping-app/master/shopping-app-images/assets/pc-homepage.png)  
+![pc-homepage](https://user-images.githubusercontent.com/84882370/144693807-3625d644-6c7f-4a22-91d6-f6387bfc9b40.png)  
 
 ![mobile view] (https://github.com/teamNewDev/ob-shopping-app/master/shopping-app-images/assets/mobile-home.png)
