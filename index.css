@@ -49,7 +49,7 @@ nav ul li{
 /*Main*/
 main{
     padding: 0 1.5rem;
-    background: url(./shopping-app-images/assets/Animated\ Shape.svg);
+    background: url(./assets/Animated\ Shape.svg);
 }
 
 .intro{
@@ -235,7 +235,7 @@ footer ol li{
     }
 
     .homeImage{
-        background: url(./shopping-app-images/assets/pexels-edu-carvalho-2295201.jpg);
+        background: url(./assets/pexels-edu-carvalho-2295201.jpg);
         background-size: contain;
         background-repeat: no-repeat;
         width: 2000px;
