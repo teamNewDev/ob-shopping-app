@@ -28,11 +28,11 @@ const populateItemsDiv = async () => {
             </div>
 
             <button class="editButton" onclick="editItem(${item.id})">
-                <img src="./shopping-app-images/assets/edit_black_24dp.svg">
+                <img src="./assets/edit_black_24dp.svg">
             </button>
 
             <button class="deleteButton" onclick = "removeItem(${item.id})">
-                <img src="./shopping-app-images/assets/delete_black_24dp.svg">
+                <img src="./assets/delete_black_24dp.svg">
             </button>
         </div>
     `).join('');
