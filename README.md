@@ -29,4 +29,5 @@ The app is was built to be responsive. Its homepage's view on mobile and desktop
 
 ![pc-homepage](https://user-images.githubusercontent.com/84882370/144693807-3625d644-6c7f-4a22-91d6-f6387bfc9b40.png)  
 
-![mobile view] (https://github.com/teamNewDev/ob-shopping-app/master/shopping-app-images/assets/mobile-home.png)
+
+![mobile-home](https://user-images.githubusercontent.com/84882370/144693863-71ad5da0-2679-4b4d-90c6-9327924eabf4.png)
