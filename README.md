@@ -22,3 +22,11 @@ For this project, I used the following:
 3.JavaScript  
 4.IndexedDb/Dexie for storage  
 5.Workbox for service worker generation  
+
+## UI 
+
+The app is was built to be responsive. Its homepage's view on mobile and desktop is seen below:  
+
+![desktop view] (./shopping-app-images/assets/pc-homepage.png)  
+
+![mobile view] (./shopping-app-images/assets/mobile-home.png)
