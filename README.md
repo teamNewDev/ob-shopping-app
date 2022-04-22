@@ -23,6 +23,10 @@ For this project, I used the following:
 4.IndexedDb/Dexie for storage  
 5.Workbox for service worker generation  
 
+## URL
+
+https://teamnewdev.github.io/ob-shopping-app/
+
 ## UI 
 
 The app is was built to be responsive. Its homepage's view on mobile and desktop is seen below:  
