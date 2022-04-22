@@ -1,7 +1,7 @@
 
-# Shopping App
+# Oja
 
-Shopping App is my solution to the Webdev Challenge. Prior to the challenge, I have dedicated hours to studying Web development technologies daily since February. Along the line, I got stuck in *tutorial hell* and I have been trying to break away from it for months now. For me, this is more than just a challenge. It is an opportunity for me to put to use everything I know (HTML, CSS, JavaScript, Bootstrap, Sass and Angular).
+Oja is my solution to the Webdev Challenge. Prior to the challenge, I have dedicated hours to studying Web development technologies daily since February. Along the line, I got stuck in *tutorial hell* and I have been trying to break away from it for months now. For me, this is more than just a challenge. It is an opportunity for me to put to use everything I know (HTML, CSS, JavaScript, Bootstrap, Sass and Angular).
 
 ## Features 
 
