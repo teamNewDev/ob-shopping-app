@@ -25,7 +25,7 @@ For this project, I used the following:
 
 ## URL
 
-https://teamnewdev.github.io/ob-shopping-app/
+https://oja.netlify.app/
 
 ## UI 
 
