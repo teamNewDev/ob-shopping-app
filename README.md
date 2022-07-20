@@ -25,7 +25,7 @@ For this project, I used the following:
 
 ## URL
 
-https://oja.netlify.app/
+https://62645b8eedbd57780bea1458--oja.netlify.app/
 
 ## UI 
 
